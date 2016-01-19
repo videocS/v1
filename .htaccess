@@ -1,0 +1,12 @@
+Options -Indexes
+Options +FollowSymLinks
+
+RewriteEngine On
+
+RewriteBase /videoc
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond $1 !^(index\.php|assets/|logs/|robots\.txt)
+RewriteRule ^(.*)$ index.php/$1 [L]
